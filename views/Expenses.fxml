@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<ScrollPane xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="restaurant.controllers.ExpenditureController">
+   <content>
+      <VBox spacing="10.0" styleClass="main-layout">
+         <children>
+            <HBox alignment="CENTER_LEFT" spacing="10.0" styleClass="main-title">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <children>
+                  <FontAwesomeIconView glyphName="RUPEE" size="20" styleClass="title-icon" />
+                  <Label styleClass="title-label" text="Add, Edit, View or Delete Expenditures" />
+               </children>
+            </HBox>
+            <HBox spacing="10.0">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <children>
+                  <VBox fx:id="tableWrapper" spacing="10.0" styleClass="main-content">
+                     <children>
+                        <Label style="-fx-font-weight: bold;" text="Shortcut Keys : " />
+                        <HBox alignment="CENTER_LEFT" minHeight="42.0" spacing="10.0">
+                           <children>
+                              <Label styleClass="shortcut-desc" text="Select Multiple Items:&#10;Ctrl+Click or Shift+click" />
+                              <Label styleClass="shortcut-desc" text="Edit Expenses: &#10;Keypad 'E'&#10;" />
+                              <Label styleClass="shortcut-desc" text="Delete Expenses: &#10;Keypad 'DELETE'" />
+                              <Label styleClass="shortcut-desc" text="Mouse Right Click on &#10;Item and select Action" />
+                           </children>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </HBox>
+                        <Separator />
+                        <HBox alignment="CENTER_LEFT" spacing="10.0">
+                           <children>
+                              <HBox alignment="CENTER_LEFT" spacing="5.0">
+                                 <children>
+                                    <Label text="From " />
+                                    <JFXDatePicker fx:id="fromDateSelect" defaultColor="#1ca5e0" />
+                                    <Label text="To " />
+                                    <JFXDatePicker fx:id="toDateSelect" defaultColor="#1ca5e0" />
+                                    <JFXButton onAction="#searchByDateAction" ripplerFill="BLACK" styleClass="btn-primary" text="Search">
+                                       <HBox.margin>
+                                          <Insets left="10.0" />
+                                       </HBox.margin>
+                                    </JFXButton>
+                                 </children>
+                              </HBox>
+                              <Separator orientation="VERTICAL" />
+                              <HBox alignment="CENTER_LEFT">
+                                 <children>
+                                    <JFXTextField fx:id="searchText" minWidth="-Infinity" prefWidth="200.0" promptText="Search Expense by Name" styleClass="text-field" unFocusColor="#1ca5e0">
+                                       <padding>
+                                          <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+                                       </padding>
+                                    </JFXTextField>
+                                    <FontAwesomeIconView glyphName="SEARCH" size="18" styleClass="action-icon" />
+                                 </children>
+                                 <HBox.margin>
+                                    <Insets right="20.0" />
+                                 </HBox.margin>
+                              </HBox>
+                              <Separator orientation="VERTICAL" />
+                              <Button fx:id="addButton" mnemonicParsing="false" onAction="#addAction" styleClass="action-button">
+                                 <tooltip>
+                                    <Tooltip text="Add" />
+                                 </tooltip>
+                                 <graphic>
+                                    <FontAwesomeIconView glyphName="PLUS" size="17" styleClass="action-icon" />
+                                 </graphic>
+                              </Button>
+                              <Button fx:id="editButton" mnemonicParsing="false" onAction="#editAction" styleClass="action-button">
+                                 <tooltip>
+                                    <Tooltip text="Edit" />
+                                 </tooltip>
+                                 <graphic>
+                                    <FontAwesomeIconView glyphName="EDIT" size="17" styleClass="action-icon" />
+                                 </graphic>
+                              </Button>
+                              <Button fx:id="deleteButton" mnemonicParsing="false" onAction="#deleteAction" styleClass="action-button">
+                                 <tooltip>
+                                    <Tooltip text="Delete" />
+                                 </tooltip>
+                                 <graphic>
+                                    <FontAwesomeIconView glyphName="TRASH" size="17">
+                                       <styleClass>
+                                          <String fx:value="action-icon" />
+                                          <String fx:value="delete-icon" />
+                                       </styleClass></FontAwesomeIconView>
+                                 </graphic>
+                              </Button>
+                              <Button fx:id="refreshButton" mnemonicParsing="false" onAction="#refreshAction" styleClass="action-button">
+                                 <tooltip>
+                                    <Tooltip text="Refresh" />
+                                 </tooltip>
+                                 <graphic>
+                                    <FontAwesomeIconView glyphName="REFRESH" size="17" styleClass="action-icon" />
+                                 </graphic>
+                              </Button>
+                           </children>
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin>
+                        </HBox>
+                        <HBox>
+                           <children>
+                              <Label text="Total Expenditures : " />
+                              <Label fx:id="totalExpenseLabel" style="-fx-font-weight: bold;" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </content>
+</ScrollPane>

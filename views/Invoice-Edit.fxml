@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<ScrollPane xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="restaurant.controllers.InvoiceEditController">
+   <content>
+      <VBox spacing="10.0" styleClass="main-layout">
+         <children>
+            <HBox alignment="CENTER_LEFT" spacing="10.0" styleClass="main-title-small">
+               <children>
+                  <FontAwesomeIconView glyphName="INFO" size="25" styleClass="title-icon">
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin></FontAwesomeIconView>
+                  <Label style="-fx-font-weight: normal;" styleClass="title-label" text="Add Invoice Item: Type Item name or Shortcut Key -&gt; Select Item from Dropdown List  &#10;-&gt; Press ENTER/RETURN Key&#10;&#10;Delete Invoice Item: Select Item from Invoice Table -&gt; Press DELETE Key" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" styleClass="main-title-small">
+               <children>
+                  <Label text="Table Number : " />
+                  <Label fx:id="tableNoLabel" style="-fx-border-color: #1ca5e0; -fx-border-width: 2; -fx-border-radius: 12; -fx-font-weight: bold;">
+                     <padding>
+                        <Insets left="10.0" right="10.0" />
+                     </padding>
+                  </Label>
+               </children>
+               <padding>
+                  <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+               </padding>
+            </HBox>
+            <VBox spacing="10.0" styleClass="main-content">
+               <children>
+                  <HBox alignment="CENTER_LEFT">
+                     <children>
+                        <JFXTextField fx:id="searchItemText" minWidth="-Infinity" prefWidth="400.0" promptText="Search Item by Name or Shortcut Key" styleClass="text-field" unFocusColor="#1ca5e0">
+                           <padding>
+                              <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+                           </padding>
+                        </JFXTextField>
+                        <FontAwesomeIconView glyphName="SEARCH" size="18" styleClass="action-icon" />
+                     </children>
+                  </HBox>
+                  <HBox spacing="10.0">
+                     <children>
+                        <TableView fx:id="invoiceTable">
+                          <columns>
+                            <TableColumn fx:id="nameCol" editable="false" maxWidth="-1.0" minWidth="200.0" prefWidth="200.0" text="Item Name" />
+                              <TableColumn fx:id="priceCol" maxWidth="-1.0" minWidth="80.0" text="Price" />
+                              <TableColumn fx:id="qtyCol" minWidth="50.0" prefWidth="50.0" text="Qty" />
+                              <TableColumn fx:id="totalCol" minWidth="100.0" prefWidth="100.0" text="Total" />
+                          </columns>
+                        </TableView>
+                        <Separator orientation="VERTICAL" prefHeight="200.0" />
+                        <GridPane style="-fx-background-color: #ffffff;">
+                          <columnConstraints>
+                            <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" minWidth="100.0" prefWidth="130.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="10.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="100.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                              <RowConstraints minHeight="20.0" prefHeight="20.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="20.0" prefHeight="20.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="10.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="10.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="10.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="10.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="10.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="1.0" prefHeight="1.0" valignment="TOP" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="TOP" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="10.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Label text="Tax (%)" GridPane.rowIndex="4" />
+                              <Label text="Service Charge (%)" GridPane.rowIndex="5" />
+                              <Label text="SubTotal" GridPane.rowIndex="3" />
+                              <Separator prefWidth="200.0" GridPane.columnSpan="3" GridPane.rowIndex="7" />
+                              <Label text=":" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                              <Label text=":" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                              <Label text=":" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                              <Label style="-fx-font-weight: bold;" text="Total" GridPane.rowIndex="9" />
+                              <Label text=":" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+                              <Label fx:id="subTotalLabel" text="0" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                              <Label fx:id="taxLabel" text="0" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                              <Label fx:id="serviceChargeLabel" text="0" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+                              <Label fx:id="totalLabel" text="0" GridPane.columnIndex="2" GridPane.rowIndex="9" />
+                              <JFXComboBox fx:id="customerSelect" prefWidth="250.0" promptText="Select Customer" GridPane.columnSpan="3" />
+                              <JFXDatePicker fx:id="dateSelect" defaultColor="#1ca5e0" focusTraversable="false" minWidth="230.0" GridPane.columnSpan="3" GridPane.rowIndex="1" />
+                              <JFXTextField fx:id="discountText" text="0.00" GridPane.columnIndex="2" GridPane.rowIndex="8" />
+                              <JFXButton buttonType="RAISED" onAction="#saveAction" onKeyPressed="#saveKeyPress" ripplerFill="BLACK" styleClass="btn-primary" text="Update" GridPane.rowIndex="11" />
+                              <JFXButton fx:id="cancelButton" buttonType="RAISED" onAction="#cancelAction" onKeyPressed="#cancelKeyPress" ripplerFill="#252424" styleClass="btn-danger" text="Cancel" GridPane.columnIndex="2" GridPane.rowIndex="11" />
+                              <Label text="Packing Charge" GridPane.rowIndex="6" />
+                              <Label text=":" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                              <Label fx:id="packingChargeLabel" text="0" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+                              <Label text="Discount" GridPane.rowIndex="8" />
+                              <Label text=":" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                              <JFXButton buttonType="RAISED" onAction="#printAction" ripplerFill="BLACK" styleClass="btn-primary" text=" Print Receipt" GridPane.columnSpan="3" GridPane.halignment="CENTER" GridPane.rowIndex="12" GridPane.valignment="CENTER">
+                                 <graphic>
+                                    <FontAwesomeIconView glyphName="PRINT" />
+                                 </graphic>
+                              </JFXButton>
+                           </children>
+                        </GridPane>
+                     </children>
+                  </HBox>
+               </children></VBox>
+         </children>
+      </VBox>
+   </content>
+</ScrollPane>

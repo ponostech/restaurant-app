@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<ScrollPane xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="restaurant.controllers.SettingsController">
+   <content>
+      <VBox spacing="10.0" styleClass="main-layout">
+         <children>
+            <HBox alignment="CENTER_LEFT" spacing="10.0" styleClass="main-title">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <children>
+                  <FontAwesomeIconView glyphName="GEARS" size="18" styleClass="title-icon" />
+                  <Label styleClass="title-label" text="Settings" />
+               </children>
+            </HBox>
+            <VBox spacing="10.0" styleClass="main-content">
+               <children>
+                  <GridPane maxWidth="-Infinity" minWidth="600.0" prefWidth="600.0" vgap="5.0">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="195.0" minWidth="188.0" prefWidth="192.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="10.0" minWidth="10.0" prefWidth="10.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="550.0" minWidth="400.0" prefWidth="550.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="42.0" minHeight="10.0" prefHeight="31.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="5.0" minHeight="5.0" prefHeight="5.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="42.0" minHeight="10.0" prefHeight="31.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="42.0" minHeight="10.0" prefHeight="31.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="5.0" minHeight="5.0" prefHeight="5.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Label text="Restaurant Name" GridPane.rowIndex="1">
+                           <GridPane.margin>
+                              <Insets left="20.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <Label text="Address 1" GridPane.rowIndex="2">
+                           <GridPane.margin>
+                              <Insets left="20.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <Label text="Mobile Number(s)" GridPane.rowIndex="4">
+                           <GridPane.margin>
+                              <Insets left="20.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <Label text="Office/Store Number(s)" GridPane.rowIndex="5">
+                           <GridPane.margin>
+                              <Insets left="20.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <Label style="-fx-font-weight: bold;" text="Tax  and Charges Settings:" GridPane.rowIndex="10" />
+                        <Label text="Tax (%)" GridPane.rowIndex="11">
+                           <GridPane.margin>
+                              <Insets left="20.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <Label text="Service Charge (%)" GridPane.rowIndex="12">
+                           <GridPane.margin>
+                              <Insets left="20.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <Label style="-fx-font-weight: bold;" text="General Settings:" />
+                        <Label text=":" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Label text=":" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <Label text=":" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <Label text=":" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                        <Label text=":" GridPane.columnIndex="1" GridPane.rowIndex="11" />
+                        <Label text=":" GridPane.columnIndex="1" GridPane.rowIndex="12" />
+                        <JFXTextField fx:id="nameText" unFocusColor="#1ca5e0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                        <JFXTextField fx:id="address1Text" unFocusColor="#1ca5e0" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                        <JFXTextField fx:id="address2Text" unFocusColor="#1ca5e0" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                        <JFXTextField fx:id="mobNoText" unFocusColor="#1ca5e0" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                        <JFXTextField fx:id="storeNoText" unFocusColor="#1ca5e0" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+                        <JFXTextField fx:id="tableNoText" unFocusColor="#1ca5e0" GridPane.columnIndex="2" GridPane.rowIndex="8" />
+                        <JFXTextField fx:id="taxText" unFocusColor="#1ca5e0" GridPane.columnIndex="2" GridPane.rowIndex="11" />
+                        <JFXTextField fx:id="serviceChargeText" unFocusColor="#1ca5e0" GridPane.columnIndex="2" GridPane.rowIndex="12" />
+                        <Label text="Number of Tables" GridPane.rowIndex="8">
+                           <GridPane.margin>
+                              <Insets left="20.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <Label style="-fx-font-weight: bold;" text="Restaurant Settings:" GridPane.rowIndex="7" />
+                        <Label text=":" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                        <Label text="     Address 2" GridPane.rowIndex="3" />
+                        <Label text="     Packing Charge" GridPane.rowIndex="13" />
+                        <Label text=":" GridPane.columnIndex="1" GridPane.rowIndex="13" />
+                        <JFXTextField fx:id="packingChargeText" unFocusColor="#1ca5e0" GridPane.columnIndex="2" GridPane.rowIndex="13" />
+                     </children>
+                  </GridPane>
+                  <HBox alignment="CENTER_RIGHT" maxWidth="-Infinity" prefWidth="600.0">
+                     <children>
+                        <JFXButton buttonType="RAISED" onAction="#saveAction" onKeyPressed="#saveKeyPress" ripplerFill="WHITE" styleClass="btn-primary" text="Save Settings" />
+                     </children>
+                     <VBox.margin>
+                        <Insets top="25.0" />
+                     </VBox.margin>
+                     <padding>
+                        <Insets bottom="20.0" />
+                     </padding>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </VBox>
+   </content>
+</ScrollPane>

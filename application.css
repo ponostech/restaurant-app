@@ -1,0 +1,83 @@
+/* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
+
+.db-conn-status{
+	-fx-font-weight: bold;
+}
+.main-layout{
+	-fx-background-color: #ffffff;
+}
+.main-title{
+	-fx-background-color: #f1f1f1;
+	-fx-padding: 10px 20px;
+	-fx-font-weight: bold;
+	-fx-font-size: 16px;
+}
+.main-title-small{
+	-fx-background-color: #f1f1f1;
+	-fx-padding:10px 20px;
+	-fx-font-size: 15px;
+}
+.main-content{
+	-fx-padding: 20px;
+}
+
+.shortcut-desc{
+	-fx-background-color: #f1f1f1;
+	-fx-padding: 8px 15px;
+	-fx-border-color: #1ca5e0;
+}
+.required{
+	-fx-text-fill: #ff0000;
+	-fx-font-weight: bold;
+}
+
+.button{
+	-fx-padding: 5px 20px 5px 20px;
+}
+.btn-primary{
+	-fx-background-color: #1ca5e0;
+	-fx-text-fill: #ffffff;	
+	-fx-cursor: hand ;
+}
+.btn-danger{
+	-fx-background-color: #ff0000;
+	-fx-text-fill: #ffffff;
+	-fx-cursor: hand ;
+}
+.menu-item{
+	-fx-cursor: hand;
+}
+.menu-icon, .title-icon{
+	-fx-fill: #00b7cf;
+}
+
+.action-button{
+	-fx-background-color: transparent ;
+	-fx-border-color: #DADADA;
+	-fx-border-radius: 25px;
+	-fx-pref-height: 35px;
+	-fx-pref-width: 35px;
+	-fx-min-height: 35px;
+	-fx-min-width: 35px;
+	-fx-cursor: hand ;
+	-fx-padding: 0;
+}
+.action-icon{
+	-fx-fill: #158fbf; 
+	/* #4B474B;*/
+}
+.delete-icon{
+	-fx-fill: #ff0000; 
+	/* #4B474B;*/
+}
+.tooltip{
+	-fx-text-fill: #333333;
+	-fx-background-color: #F8FCE8;
+	-fx-border-color: #333333;
+	-fx-border-radius: 0 0 0 0;
+	-fx-padding: 4px 20px 4px 20px;
+}
+ 
+.table-view{
+	
+}

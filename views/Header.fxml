@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<VBox xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="restaurant.controllers.HeaderController">
+   <children>
+      <StackPane alignment="TOP_LEFT" style="-fx-background-color: #414141;">
+         <children>
+            <HBox alignment="CENTER_LEFT" minWidth="300.0" spacing="5.0" StackPane.alignment="TOP_LEFT">
+               <children>
+                  <StackPane>
+                     <children>
+                        <Circle fill="#077f8d" radius="20.0" stroke="#f8f8f8" strokeType="INSIDE" />
+                        <FontAwesomeIconView fill="#f9541f" glyphName="CUTLERY" size="35" />
+                     </children>
+                  </StackPane>
+                  <Label fx:id="storeName" style="-fx-font-weight: bold;" textFill="WHITE">
+                     <font>
+                        <Font name="Freestyle Script" size="35.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </Label>
+               </children>
+               <StackPane.margin>
+                  <Insets />
+               </StackPane.margin>
+               <padding>
+                  <Insets bottom="5.0" left="10.0" top="5.0" />
+               </padding>
+            </HBox>
+            <HBox alignment="CENTER_RIGHT" minWidth="300.0" spacing="5.0" StackPane.alignment="CENTER_RIGHT">
+               <children>
+                  <Label text="Welcome" textFill="WHITE" />
+                  <Label fx:id="usernameLabel" textFill="WHITE" />
+                  <FontAwesomeIconView fx:id="logoutButton" fill="RED" glyphName="POWER_OFF" size="30">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <HBox.margin>
+                        <Insets left="20.0" />
+                     </HBox.margin></FontAwesomeIconView>
+               </children>
+               <padding>
+                  <Insets bottom="5.0" right="10.0" top="5.0" />
+               </padding>
+            </HBox>
+         </children>
+      </StackPane>
+      <Pane prefHeight="5.0" style="-fx-background-color: #00B7CF;" />
+   </children>
+</VBox>

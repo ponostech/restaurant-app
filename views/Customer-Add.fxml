@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<Pane xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="restaurant.controllers.CustomerAddController">
+   <children>
+      <VBox prefWidth="500.0" spacing="10.0" styleClass="main-layout">
+         <children>
+            <Label style="-fx-font-weight: bold;" text="Enter Customer details:">
+               <VBox.margin>
+                  <Insets bottom="10.0" />
+               </VBox.margin>
+            </Label>
+            <GridPane hgap="10.0" prefWidth="460.0" vgap="10.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="90.0" minWidth="90.0" prefWidth="90.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="10.0" minWidth="10.0" prefWidth="10.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="350.0" minWidth="300.0" prefWidth="350.0" />
+              </columnConstraints>
+              <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label text="First Name" />
+                  <Label text="Last Name" GridPane.rowIndex="1" />
+                  <Label text="Email" GridPane.rowIndex="2" />
+                  <Label text="Phone No." GridPane.rowIndex="3" />
+                  <Label text="Address" GridPane.rowIndex="4" />
+                  <Label text=":" GridPane.columnIndex="1" />
+                  <Label text=":" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Label text=":" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <Label text=":" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <Label text=":" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                  <JFXTextField fx:id="firstNameText" GridPane.columnIndex="2" />
+                  <JFXTextField fx:id="lastNameText" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                  <JFXTextField fx:id="emailText" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                  <JFXTextField fx:id="phoneNoText" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                  <JFXTextField fx:id="addressText" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                  <Label styleClass="required" text="*">
+                     <GridPane.margin>
+                        <Insets left="80.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label styleClass="required" text="*" GridPane.rowIndex="4">
+                     <GridPane.margin>
+                        <Insets left="80.0" />
+                     </GridPane.margin>
+                  </Label>
+               </children>
+            </GridPane>
+            <HBox alignment="CENTER_RIGHT" spacing="20.0">
+               <children>
+                  <JFXButton fx:id="saveButton" buttonType="RAISED" onAction="#saveAction" onKeyPressed="#saveKeyPress" ripplerFill="BLACK" styleClass="btn-primary" text="Save" />
+                  <JFXButton fx:id="cancelButton" buttonType="RAISED" onAction="#cancelAction" onKeyPressed="#cancelKeyPress" ripplerFill="BLACK" styleClass="btn-danger" text="Cancel" />
+               </children>
+               <padding>
+                  <Insets bottom="10.0" top="10.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </HBox>
+         </children>
+         <padding>
+            <Insets bottom="20.0" left="30.0" right="50.0" top="20.0" />
+         </padding>
+      </VBox>
+   </children>
+</Pane>

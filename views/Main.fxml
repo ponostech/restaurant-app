@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<ScrollPane xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="restaurant.controllers.MainController">
+   <content>
+      <VBox spacing="10.0" styleClass="main-layout">
+         <children>
+            <HBox alignment="CENTER_LEFT" spacing="10.0" styleClass="main-title">
+               <children>
+                  <FontAwesomeIconView glyphName="SHOPPING_CART" size="18" styleClass="title-icon" />
+                  <Label styleClass="title-label" text="Click on Table to add Invoices" />
+               </children>
+            </HBox>
+            <VBox spacing="20.0" styleClass="main-content">
+               <children>
+                  <GridPane fx:id="tableContainer" focusTraversable="true" gridLinesVisible="true" nodeOrientation="LEFT_TO_RIGHT">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" />
+                        <ColumnConstraints hgrow="SOMETIMES" />
+                        <ColumnConstraints hgrow="SOMETIMES" />
+                    </columnConstraints>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <rowConstraints>
+                        <RowConstraints />
+                     </rowConstraints>
+                  </GridPane>
+               </children></VBox>
+         </children>
+      </VBox>
+   </content>
+</ScrollPane>

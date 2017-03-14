@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane fx:id="loginScene" prefHeight="350.0" prefWidth="550.0" style="-fx-border-color: #DBAB87;" styleClass="login-pane" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="restaurant.controllers.LoginController">
+   <children>
+      <JFXTextField fx:id="usernameText" layoutX="81.0" layoutY="139.0" onKeyPressed="#usernameKeyPress" prefHeight="40.0" prefWidth="255.0" promptText="Username" unFocusColor="DARKGOLDENROD">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </JFXTextField>
+      <JFXPasswordField fx:id="passwordText" layoutX="81.0" layoutY="184.0" onKeyPressed="#passwordKeyPress" prefHeight="40.0" prefWidth="255.0" promptText="Password" unFocusColor="DARKGOLDENROD">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </JFXPasswordField>
+      <JFXButton fx:id="loginBtn" buttonType="RAISED" layoutX="228.0" layoutY="242.0" onKeyPressed="#loginKeyPress" prefHeight="30.0" prefWidth="110.0" ripplerFill="BLACK" styleClass="btn-primary" text="LOGIN">
+         <font>
+            <Font size="16.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton fx:id="exitBtn" buttonType="RAISED" layoutX="425.0" layoutY="241.0" onAction="#exitAction" prefHeight="37.0" prefWidth="110.0" styleClass="btn-danger" text="EXIT" underline="true">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <Hyperlink layoutX="410.0" layoutY="304.0" onAction="#dbSettingAction" text="Database Settings" />
+      <FontAwesomeIconView fill="#1ca5e0" glyphName="USER" layoutX="52.0" layoutY="178.0" size="20" />
+      <FontAwesomeIconView fill="#1ca5e0" glyphName="LOCK" layoutX="52.0" layoutY="224.0" size="25" />
+      <Label fx:id="dbStatusLabel" layoutX="43.0" layoutY="304.0" styleClass="db-conn-status" text="Connecting to Database Server..." textFill="#17c710">
+         <font>
+            <Font size="17.0" />
+         </font>
+         <padding>
+            <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+         </padding>
+      </Label>
+      <Label fx:id="loginStatusLabel" layoutX="51.0" layoutY="113.0" prefHeight="21.0" textFill="RED" />
+   </children>
+</Pane>

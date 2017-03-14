@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<ScrollPane maxWidth="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="restaurant.controllers.MenuController">
+   <content>
+      <VBox maxWidth="-Infinity" minWidth="-Infinity" spacing="5.0">
+         <children>
+            <HBox fx:id="mainMenu" alignment="CENTER_LEFT" onMouseClicked="#mainMenuClick" prefHeight="40.0" spacing="5.0" styleClass="menu-item">
+               <children>
+                  <FontAwesomeIconView glyphName="SHOPPING_CART" size="20" styleClass="menu-icon" />
+                  <Label text="  POS" textFill="#4f4d4f" />
+               </children>
+            </HBox>
+            <Separator />
+            <HBox fx:id="orderMenu" alignment="CENTER_LEFT" onMouseClicked="#orderMenuClick" prefHeight="40.0" spacing="5.0" styleClass="menu-item">
+               <children>
+                  <FontAwesomeIconView glyphName="SIGN_OUT" size="20" styleClass="menu-icon" />
+                  <Label text="  Order/Take Out" textFill="#4f4d4f" />
+               </children>
+            </HBox>
+            <Separator />
+            <HBox fx:id="invoiceMenu" alignment="CENTER_LEFT" onMouseClicked="#invoiceMenuClick" prefHeight="40.0" spacing="5.0" styleClass="menu-item">
+               <children>
+                  <FontAwesomeIconView glyphName="TABLE" size="20" styleClass="menu-icon" />
+                  <Label text="  Sales (Invoices &amp; Orders)" textFill="#4f4d4f" />
+               </children>
+            </HBox>
+            <Separator />
+            <HBox fx:id="itemMenu" alignment="CENTER_LEFT" onMouseClicked="#itemMenuClick" prefHeight="40.0" spacing="5.0" styleClass="menu-item">
+               <children>
+                  <FontAwesomeIconView glyphName="CUTLERY" size="20" styleClass="menu-icon" />
+                  <Label text="  Food Items" textFill="#4f4d4f" />
+               </children>
+            </HBox>
+            <Separator />
+            <HBox fx:id="categoryMenu" alignment="CENTER_LEFT" onMouseClicked="#categoryMenuClick" prefHeight="40.0" spacing="5.0" styleClass="menu-item">
+               <children>
+                  <FontAwesomeIconView glyphName="SHARE_ALT_SQUARE" size="20" styleClass="menu-icon" />
+                  <Label text="  Food  Categories" textFill="#4f4d4f" />
+               </children>
+            </HBox>
+            <Separator />
+            <HBox fx:id="expenditureMenu" alignment="CENTER_LEFT" onMouseClicked="#expenditureMenuClick" prefHeight="40.0" spacing="5.0" styleClass="menu-item">
+               <children>
+                  <FontAwesomeIconView glyphName="RUPEE" size="22" styleClass="menu-icon">
+                     <HBox.margin>
+                        <Insets left="3.0" />
+                     </HBox.margin>
+                  </FontAwesomeIconView>
+                  <Label text="   Expenditures" textFill="#4f4d4f" />
+               </children>
+            </HBox>
+            <Separator />
+            <HBox fx:id="customerMenu" alignment="CENTER_LEFT" onMouseClicked="#customerMenuClick" prefHeight="40.0" spacing="5.0" styleClass="menu-item">
+               <children>
+                  <FontAwesomeIconView glyphName="USERS" size="20" styleClass="menu-icon" />
+                  <Label text=" Customers" textFill="#4f4d4f" />
+               </children>
+            </HBox>
+            <Separator />
+            <HBox fx:id="userMenu" alignment="CENTER_LEFT" onMouseClicked="#userMenuClick" prefHeight="40.0" spacing="5.0" styleClass="menu-item">
+               <children>
+                  <FontAwesomeIconView glyphName="USER" size="20" styleClass="menu-icon">
+                     <HBox.margin>
+                        <Insets left="2.0" />
+                     </HBox.margin></FontAwesomeIconView>
+                  <Label text="  Users" textFill="#4f4d4f" />
+               </children></HBox>
+            <Separator />
+            <HBox fx:id="reportMenu" alignment="CENTER_LEFT" onMouseClicked="#reportMenuClick" prefHeight="40.0" spacing="5.0" styleClass="menu-item">
+               <children>
+                  <FontAwesomeIconView glyphName="BAR_CHART" size="20" styleClass="menu-icon" />
+                  <Label text=" Reports" textFill="#4f4d4f" />
+               </children>
+            </HBox>
+            <Separator />
+            <HBox fx:id="settingMenu" alignment="CENTER_LEFT" onMouseClicked="#settingMenuClick" prefHeight="40.0" spacing="5.0" styleClass="menu-item">
+               <children>
+                  <FontAwesomeIconView glyphName="GEARS" size="20" styleClass="menu-icon" />
+                  <Label text=" Settings" textFill="#4f4d4f" />
+               </children>
+            </HBox>
+            <Separator />
+         </children>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </VBox>
+   </content>
+</ScrollPane>

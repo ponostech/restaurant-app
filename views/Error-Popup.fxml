@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="CENTER_RIGHT" spacing="5.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="restaurant.helpers.ErrorHelper">
+   <children>
+      <HBox alignment="CENTER_LEFT" minWidth="400.0" spacing="20.0">
+         <children>
+            <FontAwesomeIconView fill="RED" glyphName="WARNING" size="40" />
+            <Label fx:id="messageText">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+      <JFXButton fx:id="closeButton" alignment="BOTTOM_RIGHT" buttonType="RAISED" onAction="#closeAction" onKeyPressed="#closeKeyPress" ripplerFill="BLACK" styleClass="btn-primary" text="Close" />
+   </children>
+   <padding>
+      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+   </padding>
+</VBox>
