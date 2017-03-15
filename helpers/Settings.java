@@ -21,6 +21,7 @@ public class Settings {
 				put("tax", TAX + "");
 				put("service_charge", SERVICE_CHARGE + "");
 				put("packing_charge", PACKING_CHARGE + "");
+
 			}
 		};
 	}

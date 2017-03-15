@@ -1,7 +1,7 @@
 /* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
 
 .db-conn-status{
-	-fx-font-weight: bold;
+	-fx-font-weight: bold; 
 }
 .main-layout{
 	-fx-background-color: #ffffff;
@@ -51,6 +51,9 @@
 	-fx-fill: #00b7cf;
 }
 
+.active{
+	-fx-background-color: #dddddd;
+}
 .action-button{
 	-fx-background-color: transparent ;
 	-fx-border-color: #DADADA;

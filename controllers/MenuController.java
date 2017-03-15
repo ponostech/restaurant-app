@@ -10,6 +10,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.Pos;
+import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.image.Image;
@@ -49,11 +50,16 @@ public class MenuController implements Initializable {
 
 	@FXML
 	private HBox settingMenu;
+	
+	
+	private HBox prevMenu = null;
+	private HBox currentMenu = null;
+	BorderPane root = ScreenManager.getRoot();
 
 	@FXML
 	public void mainMenuClick() {
 		URL location = getClass().getResource("/restaurant/views/Main.fxml");
-		loadMainLayout(location);
+		loadMainLayout(location, mainMenu);
 	}
 
 	@FXML
@@ -82,53 +88,55 @@ public class MenuController implements Initializable {
 	@FXML
 	public void invoiceMenuClick() {
 		URL location = getClass().getResource("/restaurant/views/Invoices.fxml");
-		loadMainLayout(location);
+		loadMainLayout(location, invoiceMenu);
 	}
 
 	@FXML
 	public void itemMenuClick() {
 		URL location = getClass().getResource("/restaurant/views/Items.fxml");
-		loadMainLayout(location);
+		loadMainLayout(location, itemMenu);
 	}
 
 	@FXML
 	public void categoryMenuClick() {
 		URL location = getClass().getResource("/restaurant/views/Categories.fxml");
-		loadMainLayout(location);
+		loadMainLayout(location, categoryMenu);
 	}
 
 	@FXML
 	public void expenditureMenuClick() {
 		URL location = getClass().getResource("/restaurant/views/Expenses.fxml");
-		loadMainLayout(location);
+		loadMainLayout(location, expenditureMenu);
 	}
 
 	@FXML
 	public void customerMenuClick() {
 		URL location = getClass().getResource("/restaurant/views/Customers.fxml");
-		loadMainLayout(location);
+		loadMainLayout(location, customerMenu);
 	}
 
 	@FXML
 	public void userMenuClick() {
 		URL location = getClass().getResource("/restaurant/views/Users.fxml");
-		loadMainLayout(location);
+		loadMainLayout(location, userMenu);
 	}
 
 	@FXML
 	public void reportMenuClick() {
 		URL location = getClass().getResource("/restaurant/views/Reports.fxml");
-		loadMainLayout(location);
+		loadMainLayout(location, reportMenu);
+		
 	}
 
 	@FXML
 	public void settingMenuClick() {
 		URL location = getClass().getResource("/restaurant/views/Settings.fxml");
-		loadMainLayout(location);
+		loadMainLayout(location, settingMenu);
 	}
 
-	public void loadMainLayout(URL location) {
+	public void loadMainLayout(URL location, HBox menu) {
 		FXMLLoader loader = new FXMLLoader(location);
+
 		try {
 			ScrollPane main = loader.load();
 			Double width = ScreenManager.getScene().getWidth();
@@ -154,10 +162,19 @@ public class MenuController implements Initializable {
 				}
 			});
 
-			ScreenManager.getRoot().setCenter(main);
+			Node node = root.getCenter();
+			root.getChildren().removeAll(node);
+			root.setCenter(null);
+			root.setCenter(main);
 			main.setFitToHeight(true);
 			main.setFitToWidth(true);
 			BorderPane.setAlignment(main, Pos.TOP_LEFT);
+			
+			prevMenu = currentMenu;
+			if(prevMenu != null)
+				prevMenu.getStyleClass().remove("active");
+			currentMenu = menu;
+			currentMenu.getStyleClass().add("active");
 
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -166,7 +183,11 @@ public class MenuController implements Initializable {
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
-
+		prevMenu = currentMenu;
+		if(prevMenu != null)
+			prevMenu.getStyleClass().remove("active");
+		currentMenu = mainMenu;
+		currentMenu.getStyleClass().add("active");
 	}
 
 }

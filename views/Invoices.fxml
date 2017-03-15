@@ -37,10 +37,10 @@
                         <Label style="-fx-font-weight: bold;" text="Shortcut Keys : " />
                         <HBox alignment="CENTER_LEFT" spacing="10.0">
                            <children>
-                              <Label styleClass="shortcut-desc" text="Select Multiple Items:&#10;Ctrl+Click or Shift+click" />
-                              <Label styleClass="shortcut-desc" text="Edit Invoices: &#10;Keypad 'E'&#10;" />
-                              <Label styleClass="shortcut-desc" text="Delete Invoices: &#10;Keypad 'DELETE'" />
-                              <Label styleClass="shortcut-desc" text="Mouse Right Click on &#10;Item and select Action" />
+                              <Label styleClass="shortcut-desc" text="Select Multiple Items: Ctrl+Click or Shift+click" />
+                              <Label styleClass="shortcut-desc" text="Edit Invoices:  Keypad 'E'&#10;" />
+                              <Label styleClass="shortcut-desc" text="Delete Invoices:  Keypad 'DELETE'" />
+                              <Label styleClass="shortcut-desc" text="Mouse Right Click on  Item and select Action" />
                            </children>
                            <VBox.margin>
                               <Insets />

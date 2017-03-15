@@ -40,6 +40,9 @@ public class SettingsController implements Initializable {
 
 	@FXML
 	private JFXTextField tableNoText;
+	
+	/*@FXML
+	private JFXCheckBox printInvoiceCheckBox;*/
 
 	@FXML
 	private JFXTextField taxText;

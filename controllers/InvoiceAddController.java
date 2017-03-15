@@ -365,7 +365,6 @@ public class InvoiceAddController implements Initializable {
 			};
 
 			task.setOnSucceeded(e -> {
-				System.out.println(task.getValue());
 				if (task.getValue().getErrorMessage() == null) {
 					ph.showInfo(Message.INVOICE_ADD);
 					cancelAction();

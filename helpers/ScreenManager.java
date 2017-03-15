@@ -65,7 +65,7 @@ public class ScreenManager {
 	public void showMainScreen() {
 		try {
 			ScrollPane main = null;
-			
+
 			FXMLLoader headerLoader = new FXMLLoader(getClass().getResource("/restaurant/views/Header.fxml"));
 			VBox header = headerLoader.load();
 

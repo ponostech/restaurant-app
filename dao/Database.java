@@ -33,7 +33,7 @@ public class Database {
 			connection = (Connection) DriverManager.getConnection(dbUrl, dbUser, dbPassword);
 
 		} catch (FileNotFoundException e) {
-			properties.setProperty("url", "jdbc:mysql://localhost:3306/ponos_filetracker");
+			properties.setProperty("url", "jdbc:mysql://localhost:3306/ponos_restaurant");
 			properties.setProperty("username", "root");
 			properties.setProperty("password", "");
 			try {

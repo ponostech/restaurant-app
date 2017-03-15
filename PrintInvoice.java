@@ -90,7 +90,7 @@ public class PrintInvoice extends JFrame {
 					listItems.add(new InvoicePrint(slNo, itemDAO.get(invoiceItem.getItemId()).getName(),
 							String.format("%.02f", invoiceItem.getPrice()), invoiceItem.getQuantity(),
 							String.format("%.02f", invoiceItem.getPrice() * invoiceItem.getQuantity())));
-					subTotal += invoiceItem.getPrice();
+					subTotal += invoiceItem.getPrice() * invoiceItem.getQuantity();
 					slNo++;
 				}
 
@@ -100,11 +100,14 @@ public class PrintInvoice extends JFrame {
 				tax = (invoice.getTax() / 100) * subTotal;
 				serviceCharge = (invoice.getServiceCharge() / 100) * subTotal;
 
+				String mobileNo = SettingsController.getSetting("mobile_no");
+				String officeNo = SettingsController.getSetting("store_no");
+
 				parameters.put("storeName", SettingsController.getSetting("name"));
 				parameters.put("address1", SettingsController.getSetting("address1"));
 				parameters.put("address2", SettingsController.getSetting("address2"));
-				parameters.put("phoneNo", "Ph No:" + SettingsController.getSetting("mobile_no") + "/"
-						+ SettingsController.getSetting("store_no"));
+				parameters.put("phoneNo",
+						"Phone No:" + (mobileNo != null ? mobileNo + "/" : "") + (officeNo != null ? officeNo : ""));
 				parameters.put("invoiceId", "#" + invoice.getId());
 				parameters.put("invoiceDate", DateTimeHelper.formattedDateTime(invoice.getDatetime()));
 
@@ -130,7 +133,7 @@ public class PrintInvoice extends JFrame {
 				parameters.put("packingCharge", String.format("%.02f", invoice.getPackingChargeAmount()));
 				parameters.put("discount", "-" + String.format("%.02f", invoice.getDiscount()));
 				parameters.put("total", String.format("%.02f", invoice.getTotal()));
-				
+
 				JasperPrint jasperPrint;
 				try {
 					jasperPrint = JasperFillManager.fillReport(receipt, parameters, new JREmptyDataSource());

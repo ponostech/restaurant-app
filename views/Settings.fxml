@@ -42,8 +42,8 @@
                         <RowConstraints maxHeight="42.0" minHeight="10.0" prefHeight="31.0" vgrow="SOMETIMES" />
                         <RowConstraints maxHeight="5.0" minHeight="5.0" prefHeight="5.0" vgrow="SOMETIMES" />
                         <RowConstraints maxHeight="42.0" minHeight="10.0" prefHeight="31.0" vgrow="SOMETIMES" />
-                        <RowConstraints maxHeight="42.0" minHeight="10.0" prefHeight="31.0" vgrow="SOMETIMES" />
                         <RowConstraints maxHeight="5.0" minHeight="5.0" prefHeight="5.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="42.0" minHeight="10.0" prefHeight="31.0" vgrow="SOMETIMES" />
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -93,16 +93,16 @@
                         <JFXTextField fx:id="address2Text" unFocusColor="#1ca5e0" GridPane.columnIndex="2" GridPane.rowIndex="3" />
                         <JFXTextField fx:id="mobNoText" unFocusColor="#1ca5e0" GridPane.columnIndex="2" GridPane.rowIndex="4" />
                         <JFXTextField fx:id="storeNoText" unFocusColor="#1ca5e0" GridPane.columnIndex="2" GridPane.rowIndex="5" />
-                        <JFXTextField fx:id="tableNoText" unFocusColor="#1ca5e0" GridPane.columnIndex="2" GridPane.rowIndex="8" />
+                        <JFXTextField fx:id="tableNoText" unFocusColor="#1ca5e0" GridPane.columnIndex="2" GridPane.rowIndex="9" />
                         <JFXTextField fx:id="taxText" unFocusColor="#1ca5e0" GridPane.columnIndex="2" GridPane.rowIndex="11" />
                         <JFXTextField fx:id="serviceChargeText" unFocusColor="#1ca5e0" GridPane.columnIndex="2" GridPane.rowIndex="12" />
-                        <Label text="Number of Tables" GridPane.rowIndex="8">
+                        <Label text="Number of Tables" GridPane.rowIndex="9">
                            <GridPane.margin>
                               <Insets left="20.0" />
                            </GridPane.margin>
                         </Label>
                         <Label style="-fx-font-weight: bold;" text="Restaurant Settings:" GridPane.rowIndex="7" />
-                        <Label text=":" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                        <Label text=":" GridPane.columnIndex="1" GridPane.rowIndex="9" />
                         <Label text="     Address 2" GridPane.rowIndex="3" />
                         <Label text="     Packing Charge" GridPane.rowIndex="13" />
                         <Label text=":" GridPane.columnIndex="1" GridPane.rowIndex="13" />
